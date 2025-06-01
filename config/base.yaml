@@ -1,0 +1,25 @@
+# config/base.yaml
+env_id: "MiniGrid-Fetch-8x8-N3-v0"
+wrappers:
+  - mission        # e.g. map the mission string → vector
+  - rgb        # ImgObsWrapper + RGBImgObsWrapper
+policy: "PPO"
+policy_kwargs:
+  features_extractor_class: "models.cnn_extractor:MinigridFeaturesExtractor"
+  features_extractor_kwargs:
+    features_dim: 128
+hyperparams:
+  learning_rate: 2.5e-4
+  n_steps: 128
+  batch_size: 64
+  n_epochs: 4
+  gamma: 0.99
+  ent_coef: 0.01
+  clip_range: 0.2
+timesteps: 200000
+exp_name: "./experiments/exp-001"
+log_dir: "/logs"
+checkpoint_dir: "/checkpoint"
+save_freq: 10000
+eval_freq: 10000
+n_eval_episodes: 10

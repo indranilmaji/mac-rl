@@ -6,7 +6,7 @@ import argparse
 import time
 
 parser = argparse.ArgumentParser()
-parser.add_argument("--model", type=str, default="./logs/PPO_4/ppo_minigrid_fetch.zip", help="Path to trained model")
+parser.add_argument("--model", type=str, default="./logs/PPO_2/ppo_minigrid_fetch.zip", help="Path to trained model")
 parser.add_argument("--episodes", type=int, default=5, help="Number of episodes")
 args = parser.parse_args()
 
